@@ -1,0 +1,54 @@
+FORMAT: 1A
+HOST: https://school.busanhs.xyz/
+
+# busanhs
+
+부산고등학교 학생관리시스템을 API로 조회할 수 있도록 하였습니다.
+
+Made API to search student data from Busan High School Student Information System.
+
+## Meal Data [/api/neis/meal]
+
+### GET
+
++ Response 200 (application/json)
+
+        {"today1": {"ATPT_OFCDC_SC_CODE":"","ATPT_OFCDC_SC_NM":"","SD_SCHUL_CODE":"","SCHUL_NM":"","MMEAL_SC_CODE":"","MMEAL_SC_NM":"","MLSV_YMD":"","MLSV_FGR":"","DDISH_NM":"","ORPLC_INFO":"","CAL_INFO":"","NTR_INFO":"","MLSV_FROM_YMD":"","MLSV_TO_YMD":""}, "today2": "이하동문 OPEN_NEIS 참조.", "today3": "...", "tomorrow1": "...", "tomorrow2": "...", "tomorrow3": "..."}
+
+## School Information Data [/api/neis/about]
+
+### GET
+
++ Response 200 (application/json)
+
+        {"ATPT_OFCDC_SC_CODE":"C10","ATPT_OFCDC_SC_NM":"부산광역시교육청","SD_SCHUL_CODE":"7150100","SCHUL_NM":"부산고등학교","ENG_SCHUL_NM":"Busan High School","SCHUL_KND_SC_NM":"고등학교","LCTN_SC_NM":"부산광역시","JU_ORG_NM":"부산광역시교육청","FOND_SC_NM":"공립","ORG_RDNZC":"48802 ","ORG_RDNMA":"부산광역시 동구 초량로40번길 23","ORG_RDNDA":"(초량동/ 부산고등학교)","ORG_TELNO":"051-600-0700","HMPG_ADRES":"http://busan.hs.kr","COEDU_SC_NM":"남","ORG_FAXNO":"051-466-2344","HS_SC_NM":"일반고","INDST_SPECL_CCCCL_EXST_YN":"N","HS_GNRL_BUSNS_SC_NM":"일반계","SPCLY_PURPS_HS_ORD_NM":null,"ENE_BFE_SEHF_SC_NM":"전기","DGHT_SC_NM":"주간","FOND_YMD":"19130310","FOAS_MEMRD":"19130310","LOAD_DTM":"20200615102244"}
+
+## School Intime Data [/api/internal/schooltime]
+
+### GET
+
++ Response 200 (application/json)
+
+        {"DayGubun":"5","FirstINTime":"08:01:00","SecondINTime":"08:21:00","OutTime":"22:30:00","DBTime":null,"Bigo":null}
+
+## Student Point Data [/api/internal/personalData]
+
+### POST
+
++ Body
+    + StudentNo (string, required)
+        학생증 뒤 바코드와 같음.
+    + Name (string, required)
+        성명
+    + Grade (Number, required)
+        학년
+    + Ban (Number, required)
+        반
+    + Num (Number, required)
+        번호
+        
++ Response 200 (application/json)
+
+        {
+            "Merit": "stringified contents..."
+        }
