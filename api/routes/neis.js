@@ -34,7 +34,7 @@ router.get('/about', async (req, res) => {
 });
 
 router.get('/meal', async (req, res) => {
-    const body = await NeisService.Meal()
+    const body = await NeisService.Meal2()
     await res.json(body)
 })
 
