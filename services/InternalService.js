@@ -1,4 +1,4 @@
-const {schooltime, merit, teacher} = require('../models/index')
+const {schooltime, merit, teacher, student} = require('../models/index')
 const moment = require('moment')
 
 const string6ToTime = (string6) => {
@@ -37,6 +37,18 @@ module.exports = {
             callback(null, string_array)
         }).catch(e => {
             callback(e)
+        })
+    }, Search: async (name) => {
+        return await student.findAll({
+            where: {
+                name
+            }
+        })
+    }, List: async (where) => {
+        return await student.findAll({
+            where, order: [
+                ['num', 'asc']
+            ]
         })
     }
 }

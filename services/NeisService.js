@@ -39,8 +39,7 @@ module.exports = {
             }
         })
         return JSON.parse(response.body)['schoolInfo'][1]['row'][0]
-    },
-    Meal: async () => {
+    }, Meal: async () => {
         const todayDate = moment().format('YYYYMMDD')
         const tomorrowDate = moment().add(1, 'days').format('YYYYMMDD')
         const params = (date, code) => {
