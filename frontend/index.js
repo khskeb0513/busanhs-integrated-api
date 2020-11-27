@@ -3,7 +3,7 @@ const router = express.Router()
 
 router.get('/', (req, res) => {
     res.render('index', {
-        title: 'BusanHighSchool e-haksa'
+        title: 'Busan HighSchool e-haksa'
     })
 })
 
