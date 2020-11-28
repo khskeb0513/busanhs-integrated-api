@@ -29,7 +29,7 @@ const frontend = {
     systems: require('./frontend/systems')
 }
 const api = {
-    about: require('./api/routes/neis'),
+    neis: require('./api/routes/neis'),
     internal: require('./api/routes/internal')
 }
 Object.keys(frontend).forEach(key => {
